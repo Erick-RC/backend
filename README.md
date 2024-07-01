@@ -73,3 +73,52 @@ Respuesta esperada: 200 OK
     "created_at": "2024-01-01T00:00:00.000Z"
   }
 }
+## 3. Obtener Usuario Actual (/me)
+Método: GET
+URL: http://localhost:3000/me
+Encabezado (Headers):
+Authorization: Bearer token (reemplaza token con el token JWT recibido en la respuesta de la solicitud de inicio de sesión)
+Respuesta esperada: 200 OK
+
+{
+  "id": 1,
+  "email": "test@example.com",
+  "name": "User Name",
+  "biografia": "User biography",
+  "phone": "1234567890",
+  "photo": "photo_url",
+  "created_at": "2024-01-01T00:00:00.000Z"
+}
+
+## 4. Actualización de Perfil (/update-profile)
+Método: PUT
+URL: http://localhost:3000/update-profile
+Encabezado (Headers):
+Authorization: Bearer token (reemplaza token con el token JWT recibido en la respuesta de la solicitud de inicio de sesión)
+Cuerpo (Body): JSON
+
+{
+  "photo": "new_photo_url.jpg",
+  "name": "New Name",
+  "biografia": "New biography",
+  "phone": "1234567890",
+  "email": "newemail@example.com",
+  "password": "newpassword123"
+}
+Respuesta esperada: 200 OK
+
+  "message": "Profile updated successfully",
+  "result": {
+    "affectedRows": 1,
+    "changedRows": 1,
+    "warningStatus": 0
+  }
+};
+## Solución de Problemas
+Si alguna de las solicitudes no funciona como se espera, asegúrate de que:
+
+El servidor está corriendo y accesible.
+Las rutas están correctamente definidas.
+El encabezado de autorización tiene el token JWT correcto.
+El cuerpo de la solicitud está bien formado según lo que espera la API.
+Si encuentras algún problema, revisa los detalles específicos del error y ajusta las solicitudes en consecuencia.
