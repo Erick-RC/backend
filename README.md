@@ -35,7 +35,7 @@ npm run dev
 Usando Thunder Client (VSCode) o Postman
 1. Registro (/register)
 Método: POST 
-URL: http://localhost:3000/register
+URL: http://localhost:3000/api/auth/register
 Cuerpo (Body): JSON
 
 {
@@ -55,7 +55,7 @@ Respuesta esperada: 201 Created
 }
 ## 2. Inicio de sesión (/login)
 Método: POST
-URL: http://localhost:3000/login
+URL: http://localhost:3000/api/auth/login
 Cuerpo (Body): JSON
 
 {
@@ -75,7 +75,7 @@ Respuesta esperada: 200 OK
 }
 ## 3. Obtener Usuario Actual (/me)
 Método: GET
-URL: http://localhost:3000/me
+URL: http://localhost:3000/api/auth/me
 Encabezado (Headers):
 Authorization: Bearer token (reemplaza token con el token JWT recibido en la respuesta de la solicitud de inicio de sesión)
 Respuesta esperada: 200 OK
@@ -92,7 +92,7 @@ Respuesta esperada: 200 OK
 
 ## 4. Actualización de Perfil (/update-profile)
 Método: PUT
-URL: http://localhost:3000/update-profile
+URL: http://localhost:3000/api/auth/update-profile
 Encabezado (Headers):
 Authorization: Bearer token (reemplaza token con el token JWT recibido en la respuesta de la solicitud de inicio de sesión)
 Cuerpo (Body): JSON
